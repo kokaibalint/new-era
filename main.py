@@ -1,9 +1,19 @@
+from display import *
+
 '''
     Create the menu elements.
 '''
-#your code
+# your code
 
 '''
-    Big main :D 
+    Big main :D
 '''
-#your code
+# your code
+
+
+def main():
+    menu()
+
+
+if __name__ == "__main__":
+    main()

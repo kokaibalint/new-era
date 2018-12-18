@@ -1,27 +1,41 @@
+from statistics import *
+
 '''
     Here you need to make a simple menu printing
 '''
-#your code
+
+# your code
+
 
 def menu():
-    commands = ["Exit",
-                "1.task",
-                "2.task",
-                "3.task",
-                "4.task",
-                "5.task"]
-    usr_input = input()
-    if usr_input == "1":
-        print()
-    if usr_input == "2":
-        print()
-    if usr_input == "3":
-        print()
-    if usr_input == "4":
-        print()
-    if usr_input == "5":
-        print()
+    print("""
+Main menu
 
+1. Total box office
+2. Highest box office
+3. Oldest and newest movies
+4. Last movie in alphabetical order
+5. Average release year
+6. Movie with the longest named director
+7. Exit  """)
+    option = input("Choose a function: ")
+    if option == "1":
+        total_box_office()
+    elif option == "2":
+        highest_box_office
+    elif option == "3":
+        oldest_and_newest()
+    elif option == "4":
+        alphabetically_last()
+    elif option == "5":
+        average_year()
+    elif option == "6":
+        longest_director()
+    elif option == "7":
+        exit()
+    else:
+        print("Choose an option from 1 to 7!")
+        menu()
 
 '''
     Here you need to print out the result of the function
