@@ -1,4 +1,5 @@
 from statistics import *
+import file_handling
 
 '''
     Here you need to make a simple menu printing
@@ -22,7 +23,7 @@ Main menu
     if option == "1":
         total_box_office()
     elif option == "2":
-        highest_box_office
+        highest_box_office()
     elif option == "3":
         oldest_and_newest()
     elif option == "4":
