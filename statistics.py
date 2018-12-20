@@ -81,9 +81,9 @@ def highest_box_office_dict():
                     if int(element) > num:
                         num = int(element)
                         bla = k[0]
-                        name = k[1]
-                        
-    print(bla,name)
+                        name = k[1]    
+    print(bla, name)
+
 
 def oldest_and_newest():
     # Displays the oldest and the newest movie
@@ -140,12 +140,11 @@ def oldest_and_newest_dict():
                         its_me = k[0]
                         name = k[1]
                     elif int(element) < rnd_num:
-                        rnd_num =int(element)
+                        rnd_num = int(element)
                         title = k[0]
                         info = k[1]
-    print(its_me,name,'\n')
-    print(title,info)
-
+    print(its_me, name, '\n')
+    print(title, info)
 
 
 def alphabetically_last():
