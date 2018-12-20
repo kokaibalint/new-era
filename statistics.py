@@ -177,9 +177,15 @@ def alphabetically_last():
 
 
 def alphabetically_last_dict():
-    print("¯\_(ツ)_/¯")
+    movies = file_import_dictionary()
+    a = []
+    for k in movies.items():
+        for v in k:
+            if 'name' in v:
+                a.append(v['name'])
+    print(max(a))
 
-
+    
 def average_year():
     # Calculates the average year the movies were made
     years = []
