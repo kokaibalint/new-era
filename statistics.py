@@ -19,7 +19,7 @@ def total_box_office_dict():
     sum_of_boxes = []
     sum_nums = 0
     sum_of_nums = []
-    movies = file_import()
+    movies = file_import_dictionary()
     for key in movies.items():
         for v in key:
             if 'box_office' in v:
@@ -69,8 +69,21 @@ def highest_box_office():
 
 
 def highest_box_office_dict():
-    pass
-
+    movies = file_import_dictionary()
+    num = 0
+    a = ''
+    for k in movies.items():
+        for v in k:
+            if 'box_office' in v:
+                # print(v['box_office'])
+                a = v['box_office']
+                for element in a:
+                    if int(element) > num:
+                        num = int(element)
+                        bla = k[0]
+                        name = k[1]
+                        
+    print(bla,name)
 
 def oldest_and_newest():
     # Displays the oldest and the newest movie
@@ -111,7 +124,28 @@ def oldest_and_newest():
 
 
 def oldest_and_newest_dict():
-    pass
+    movies = file_import_dictionary()
+    a = ''
+    name = ''
+    num = 0
+    rnd_num = 4000
+    its_me = ''
+    for k in movies.items():
+        for v in k:
+            if 'release_year' in v:
+                a = v['release_year']
+                for element in a:
+                    if int(element) > num:
+                        num = int(element)
+                        its_me = k[0]
+                        name = k[1]
+                    elif int(element) < rnd_num:
+                        rnd_num =int(element)
+                        title = k[0]
+                        info = k[1]
+    print(its_me,name,'\n')
+    print(title,info)
+
 
 
 def alphabetically_last():
