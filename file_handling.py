@@ -1,4 +1,5 @@
-def file_import():
+
+def file_import_dictionary():
     with open('movies_data.ini', 'r') as f:
         all_movies = {}
         current_movie = None
@@ -8,7 +9,13 @@ def file_import():
                 all_movies[line] = {}
                 current_movie = line
             else:
-                k,v = line.split('=')
+                k, v = line.split('=')
                 all_movies[current_movie][k] = [v]
         return all_movies
-file_import()
+
+
+def file_import_list():
+    with open("movies_data.ini", "r") as data:
+        for line in data:
+            line = line.strip()
+            return data

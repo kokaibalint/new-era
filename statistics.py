@@ -2,9 +2,20 @@ from file_handling import *
 '''
     There are the tasks wich you need to make in order to pass your PA
 '''
+
+
 def total_box_office():
     # Calculates the total sum of every box office in the list
-    #Bálint
+    money = 0
+    with open("movies_data.ini", "r") as data:
+        for line in data:
+            line = line.strip()
+            if "box_office" in line:
+                money += int(line[11:])
+    print(money)
+
+
+def total_box_office_dict():
     sum_of_boxes = []
     sum_nums = 0
     sum_of_nums = []
@@ -18,58 +29,169 @@ def total_box_office():
             nums = int(nums)
             sum_nums += nums
             sum_of_nums.append(sum_nums)
-    print('$',sum_nums)
+    print('$', sum_nums)
+
 
 def highest_box_office():
     # Displays the highest grossing movie
-    #Bálint
-    movies = file_import()
-    smth = 0
+    names = []
+    directors = []
+    stars = []
+    release_years = []
     box_offices = []
-    biggest_num = []
-    for key in movies.items():
-        for v in key:
-            if 'box_office' in v:
-                box_offices.append(v['box_office'])
-    # print(box_offices)
-    for item in box_offices:
-        for nums in item:
-            biggest_num.append(int(nums))
-    x = max(biggest_num)
-    if x in:
-        print('jéé')
-    else:
-        print('ohh')
-    #         if nums > smth:
-    #             smth = nums
-    #             biggest_num.append(smth)
-    #             if str(biggest_num[0]) in movies:
-    #                 print('lol')
-    #             else:
-    #                 print('XDD')
-    # # print(biggest_num[0],v['name'])
+    money = []
+    with open("movies_data.ini", "r") as data:
+        for line in data:
+            line = line.strip()
+            if "box_office" in line:
+                money.append(int(line[11:]))
+    biggest = max(money)
+    biggest = str(biggest)
+    with open("movies_data.ini", "r") as data:
+        for line in data:
+            line = line.strip()
+            if "name" in line:
+                names.append(line[5:])
+            elif "director" in line:
+                directors.append(line[11:])
+            elif "stars" in line:
+                stars.append(line[8:])
+            elif "release_year" in line:
+                release_years.append(line[-4:])
+            elif "box_office" in line:
+                box_offices.append(line[11:])
+        index = box_offices.index(biggest)
+        print(names[index])
+        print(directors[index])
+        print(stars[index])
+        print(release_years[index])
+        print(box_offices[index])
 
+
+def highest_box_office_dict():
+    pass
 
 
 def oldest_and_newest():
     # Displays the oldest and the newest movie
-    #Dani
-    print("work in progress")
+    names = []
+    directors = []
+    stars = []
+    release_years = []
+    box_offices = []
+    with open("movies_data.ini", "r") as data:
+        for line in data:
+            line = line.strip()
+            if "name" in line:
+                names.append(line[5:])
+            elif "director" in line:
+                directors.append(line[11:])
+            elif "stars" in line:
+                stars.append(line[8:])
+            elif "release_year" in line:
+                release_years.append(int(line[-4:]))
+            elif "box_office" in line:
+                box_offices.append(line[11:])
+    earliest = min(release_years)
+    latest = max(release_years)
+    earliest_index = release_years.index(earliest)
+    latest_index = release_years.index(latest)
+    print("\n")
+    print(names[earliest_index])
+    print(directors[earliest_index])
+    print(stars[earliest_index])
+    print(release_years[earliest_index])
+    print(box_offices[earliest_index])
+    print("\n")
+    print(names[latest_index])
+    print(directors[latest_index])
+    print(stars[latest_index])
+    print(release_years[latest_index])
+    print(box_offices[latest_index])
+
+
+def oldest_and_newest_dict():
+    pass
 
 
 def alphabetically_last():
     # Displays the last movie alphabetically
-    #Bálint
-    print("work in progress")
+    names = []
+    directors = []
+    stars = []
+    release_years = []
+    box_offices = []
+    with open("movies_data.ini", "r") as data:
+        for line in data:
+            line = line.strip()
+            if "name" in line:
+                names.append(line[5:])
+            elif "director" in line:
+                directors.append(line[11:])
+            elif "stars" in line:
+                stars.append(line[8:])
+            elif "release_year" in line:
+                release_years.append(int(line[-4:]))
+            elif "box_office" in line:
+                box_offices.append(line[11:])
+    last = max(names)
+    last_index = names.index(last)
+    print(names[last_index])
+    print(directors[last_index])
+    print(stars[last_index])
+    print(release_years[last_index])
+    print(box_offices[last_index])
+
+
+def alphabetically_last():
+    pass
 
 
 def average_year():
     # Calculates the average year the movies were made
-    #Dani
-    print("work in progress")
+    years = []
+    with open("movies_data.ini", "r") as data:
+        for line in data:
+            line = line.strip()
+            if "release_year" in line:
+                years.append(int(line[-4:]))
+    lenght = len(years)
+    total_years = sum(years)
+    print(round(total_years / lenght))
+
+
+def average_year_dict():
+    pass
 
 
 def longest_director():
     # Displays the movie with the longest named director
-    #Dani
-    print("work in progress")
+    names = []
+    directors = []
+    stars = []
+    release_years = []
+    box_offices = []
+    with open("movies_data.ini", "r") as data:
+        for line in data:
+            line = line.strip()
+            if "name" in line:
+                names.append(line[5:])
+            elif "director" in line:
+                directors.append(line[11:])
+            elif "stars" in line:
+                stars.append(line[8:])
+            elif "release_year" in line:
+                release_years.append(int(line[-4:]))
+            elif "box_office" in line:
+                box_offices.append(line[11:])
+    last = max(names, key=len)
+    last_index = names.index(last)
+    print(names[last_index])
+    print(directors[last_index])
+    print(stars[last_index])
+    print(release_years[last_index])
+    print(box_offices[last_index])
+
+
+def longest_director_dict():
+    pass
