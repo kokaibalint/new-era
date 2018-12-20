@@ -176,8 +176,8 @@ def alphabetically_last():
     print(box_offices[last_index])
 
 
-def alphabetically_last():
-    pass
+def alphabetically_last_dict():
+    print("¯\_(ツ)_/¯")
 
 
 def average_year():
@@ -194,7 +194,7 @@ def average_year():
 
 
 def average_year_dict():
-    pass
+    print("¯\_(ツ)_/¯")
 
 
 def longest_director():
@@ -227,4 +227,4 @@ def longest_director():
 
 
 def longest_director_dict():
-    pass
+    print("¯\_(ツ)_/¯")
